@@ -10,11 +10,12 @@ import SwiftUI
 struct HomeScreen: View {
     @State private var isShowing = false
     @State private var isPresented = false
+    @Binding var path : NavigationPath
     
     var body: some View {
         ZStack {
             if isShowing {
-                SideMenuView()
+                SideMenuView(path: $path)
             }
             NavigationView {
                 List()
@@ -35,18 +36,19 @@ struct HomeScreen: View {
                                 Image("notif")
                                     .renderingMode(.original)
                             }
-                            .fullScreenCover(isPresented: $isPresented, content: StepsTrackerView.init)
+//                            .fullScreenCover(isPresented: $isPresented, content: StepsTrackerView.init)
                         }
                     }
             }
             .offset(x: isShowing ? 225 : 0, y: 0)
+            .navigationBarBackButtonHidden(true)
         }
     }
 }
 
 struct HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
-        HomeScreen()
+        HomeScreen(path: .constant(NavigationPath()))
     }
 }
 
@@ -147,12 +149,18 @@ struct List: View {
                     }
                 }
                 
-                hView(colorGradientOne: Color(red: 1.00, green: 0.50, blue: 0.42),
-                      colorGradientTwo: Color(red: 1.00, green: 0.36, blue: 0.00),
-                      colorGradientThree: Color(red: 1.00, green: 0.38, blue: 0.57),
-                      colorGradientFour: Color(red: 0.32, green: 0.15, blue: 0.87),
-                      watermarkOne: "Vector2", titleOne: "Steps", watermarkTwo: "Vector2", titleTwo: "Heart Rate")
-                
+                Button {
+                    print("test")
+                } label: {
+                    hView(colorGradientOne: Color(red: 1.00, green: 0.50, blue: 0.42),
+                          colorGradientTwo: Color(red: 1.00, green: 0.36, blue: 0.00),
+                          colorGradientThree: Color(red: 1.00, green: 0.38, blue: 0.57),
+                          colorGradientFour: Color(red: 0.32, green: 0.15, blue: 0.87),
+                          watermarkOne: "Vector2", titleOne: "Steps", watermarkTwo: "Vector2", titleTwo: "Heart Rate")
+
+                }
+
+                               
                 hView(colorGradientOne: Color(red: 0.15, green: 0.56, blue: 1.00),
                       colorGradientTwo: Color(red: 0.38, green: 0.44, blue: 1.00),
                       colorGradientThree: Color(red: 0.27, green: 0.09, blue: 0.86),

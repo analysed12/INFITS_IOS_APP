@@ -15,24 +15,16 @@ struct SplashScreen: View {
     var lastpage = content.count - 1
     var firstPage = 0
     @State var shouldHide:Bool = false
-//    @State private var path = NavigationPath()
-//    @State private var isActive = false
+    
     @Binding var path : NavigationPath
     
     
     var body: some View {
-//        NavigationStack(path: $path) {
             VStack {
                 HStack {
                     Spacer()
                     
                     Button(action: {
-//                        if log_Status {
-//                            //home screen
-//                            path.append(NavigationType.homeScreen)
-//                        } else {
-//                            path.append(NavigationType.login)
-//                        }
                         path.append(NavigationType.login)
                         
                     }, label: {
@@ -85,27 +77,6 @@ struct SplashScreen: View {
                 updateProgress()
                 CircularProgress(progress: $progress, shouldHide: $shouldHide, path: $path)
             }
-            
-//            .navigationDestination(for: NavigationType.self) { value in
-//                switch value{
-//                case .signup:
-//                    SignupView(path: $path)
-//                case .login:
-//                    LoginView(path: $path)
-//                case .termsnc:
-//                    TermsView(path: $path)
-//                case .forgetpassword:
-//                    ForgetPassword(path: $path)
-//                case .checkEmail :
-//                    CheckMailView(path: $path)
-//                case .homeScreen :
-//                    HomeScreen(path: $path)
-//                case .testView :
-//                    testView(path: $path)
-//                }
-//            }
-            
-//        }
     }
     
     func updateProgress() {
@@ -150,10 +121,6 @@ struct CircularProgress: View {
     @Binding var progress: CGFloat
     @Binding var shouldHide : Bool
     @Binding var path : NavigationPath
-    
-//        @Binding var isActive:Bool
-    //    @Binding var login:LoginView
-    //    @Binding var action:Int
     
     var body: some View {
         

@@ -9,20 +9,34 @@ import SwiftUI
 
 struct SignupView: View {
     
-    @State private var fullName = ""
-    @State private var userName = ""
-    @State private var emailid = ""
-    @State private var password = ""
-    @State private var phoneno = ""
-    
     @State private var showingPopover:Bool = false
     @State private var revisible:Bool = false
     @State private var color = Color.white.opacity(0.7)
     
     @State var checked = false
     @State var alert = false
+    @State private var visible:Bool = false
     @State var error = ""
     @Binding var path : NavigationPath
+    
+//    @ObservedObject var jsonProvider: CheckURL = CheckURL()
+    
+    //signup Model
+    @State var name           = ""
+   @State var userName        = "" // this is also a client userID
+   @State var emailid         = ""
+   @State var password        = ""
+   @State var phoneno         = ""
+   @State var age             = ""
+   @State var gender          = ""
+   @State var height          = ""
+   @State var weight          = ""
+   @State var verification    = ""
+   @State var location        = ""
+   @State var dietitianuserID = ""
+    
+    //     @State var signupViewModel = SignUpViewModel()
+    
     
     var body: some View {
         
@@ -46,21 +60,48 @@ struct SignupView: View {
                         .padding(20)
                     
                     Group {
-                        TextFieldCustom(placeHolder: "Enter Full Name", text: $fullName)
-                            .padding(20)
+                        
+                        TextFieldCustom(placeHolder: "Enter Full Name", text:$name)
                         
                         TextFieldCustom(placeHolder: "Enter User Name", text: $userName)
-                            .padding(20)
-                        
                         TextFieldCustom(placeHolder: "Enter Email Id", text: $emailid)
-                            .padding(20)
-                        
-                        TextFieldCustom(placeHolder: "Enter Password", text: $password)
-                            .padding(20)
+                        HStack(spacing: 15) {
+                            ZStack {
+                                if self.visible{
+                                    
+                                    TextFieldCustom(placeHolder: "Enter Password", text: $password)
+                                    
+                                } else {
+                                    
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 5)
+                                            .trim(from: 0, to: 0.550)
+                                            .stroke(.white, lineWidth: 2)
+                                        RoundedRectangle(cornerRadius: 5)
+                                            .trim(from: 0.68,  to: 1)
+                                            .stroke(.white, lineWidth: 2)
+                                        Text("Enter Password")
+                                            .font(Font.custom("NATS 400", size: 14))
+                                            .position(x:69)
+                                            .foregroundColor(.white)
+                                        SecureField("Enter Password", text: self.$password, prompt: Text("Enter Password").foregroundColor(.white))
+                                            .foregroundColor(.white)
+                                            .padding(.horizontal, 10)
+                                    }
+                                }
+                                
+                            }// textfeildZstack
+                            .frame(height: 55)
+                            
+                        } //passord end
                         
                         TextFieldCustom(placeHolder: "Enter Phone Number", text: $phoneno)
-                            .padding(20)
+                        
+                            .keyboardType(.numberPad)
+                        
                     }
+                    .padding(.horizontal, 15)
+                    .padding(.vertical, 10)
                     
                     ZStack {
                         HStack {
@@ -86,11 +127,13 @@ struct SignupView: View {
                         }
                     }
                     
-                    HStack{
+                    HStack {
                         
                         Button(action: {
-                            print("Round Action")
+                            print("Signup button Pressed")
+//                            print(phoneno)
                             self.verify()
+                            
                         }) {
                             Text("Create an Account")
                                 .frame(width: UIScreen.main.bounds.width - 50, height: 50)
@@ -99,11 +142,14 @@ struct SignupView: View {
                                 .font(Font.custom("NATS 400", size: 20))
                                 .fontWeight(.medium)
                         }
+                        
                         .cornerRadius(10)
                         .padding(.bottom, 20)
                     }
+                    
+                    
                     Button(action: {
-                        path.append(NavigationType.login)
+                        path.removeLast()
                     }) {
                         HStack {
                             Text("Already a member? Log In")
@@ -138,12 +184,40 @@ struct SignupView: View {
         }
     }
     
-    func verify(){
-        if self.fullName != "" && self.userName != "" && self.emailid != "" && self.password != "" && self.phoneno != "" {
+    
+    func verify() {
+        
+        if !name.isEmpty && !userName.isEmpty && !emailid.isEmpty && !phoneno.isEmpty && !password.isEmpty && emailid.isValidEmail && phoneno.isValidPhone {            
+            postdata()
+        }else {
+            if name.isEmpty || userName.isEmpty || emailid.isEmpty || phoneno.isEmpty
+                || password.isEmpty {
+                
+                self.error = "Cannot be empty"
+            } else if  !emailid.isValidEmail {
+                
+                self.error = "Enter valid  email id"
+            } else if  !phoneno.isValidPhone {
+                self.error = "Enter valid phone number"
+            }
             
-        } else {
-            self.error = "Please Enter All Detail"
             self.alert.toggle()
+        }
+    }
+     
+    // Json parsing code
+    func postdata() {
+        
+        let resgiterModel = RegisterModel(email: emailid, password: password, userID: userName, name: name, phone: phoneno, gender: gender, age: age, height: height, weight: weight, verification: verification, dietitianuserID: dietitianuserID , location: location)
+        APIManager.shareInstance.getSignupData(register: resgiterModel) { (isSuccess) in
+            print(resgiterModel)
+
+            if isSuccess{
+                self.error = "Data is successfullySaved"
+                path.append(NavigationType.login)
+            } else {
+                self.error = "Data Not Saved"
+            }
         }
     }
     

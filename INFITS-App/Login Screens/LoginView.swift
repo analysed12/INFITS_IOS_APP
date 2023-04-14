@@ -6,7 +6,10 @@
 //
 
 import SwiftUI
-import  Firebase
+import GoogleSignIn
+import GoogleSignInSwift
+import Firebase
+
 
 struct LoginView: View {
     @State private var userName = ""
@@ -22,8 +25,16 @@ struct LoginView: View {
     
     @State private var width = CGFloat.zero
     @State private var labelWidth = CGFloat.zero
-    
+    //Navigation
     @Binding var path : NavigationPath
+    
+    //Google Sign
+    @AppStorage("log_Status") var log_Status = false
+    @State var googleUserName: String = ""
+    @State var profileUrl: String = ""
+    @State var isLoggedIn: Bool = false
+    @State var isLoading:Bool = false
+
     
     var body: some View {
         
@@ -42,24 +53,16 @@ struct LoginView: View {
                 Image("Infit transparent 2")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                
+                //TextFeild Group
                 Group {
                     TextFieldCustom(placeHolder: "UserName", text: $userName)
-                    
-                        .padding(.leading, 15)
-                    
-                        .padding(20)
-                        .padding(.bottom, 25)
                     
                     HStack(spacing: 15) {
                         ZStack {
                             if self.visible{
                                 
                                 TextFieldCustom(placeHolder: "Enter Password", text: self.$password)
-                                
-                                    .padding(.trailing, 20)
-                                    .padding(.leading, 30)
-                                    .padding(.bottom, 5)
+ 
                             } else {
                                 
                                 ZStack {
@@ -72,65 +75,23 @@ struct LoginView: View {
                                     Text("Password")
                                         .position(x:63)
                                         .foregroundColor(.white)
-                                    SecureField("Password", text: self.$password)
-                                        .padding(.leading)
+                                    SecureField("Enter Password", text: self.$password, prompt: Text("Enter Password").foregroundColor(.white))
+                                        .padding(.horizontal, 10)
+                                        .foregroundColor(.white)
                                 }
-//                                .padding(.trailing, 20)
-                                .padding(.leading, 10)
-                                .padding(.bottom, 5)
-                                
                                 .frame(maxWidth: .infinity,
                                        maxHeight: 55,
                                        alignment: .topLeading)
-                                
-                                
-                                
-                                
-                                //                                SecureField("Enter Password", text: self.$password)
-                                //                                    .padding()
-                                //                                    .background {
-                                //                                        ZStack {
-                                //                                            RoundedRectangle(cornerRadius: 5)
-                                //                                                .trim(from: 0, to: 0.55)
-                                //                                                .stroke(.white, lineWidth: 2)
-                                //                                            RoundedRectangle(cornerRadius: 5)
-                                //                                                .trim(from: 0.565 + (0.43 * (labelWidth / width)), to: 1)
-                                //                                                .stroke(.white, lineWidth: 2)
-                                //                                        }
-                                //                                    }
-                                //                                    .overlay( GeometryReader { geo in Color.clear.onAppear { width = geo.size.width }})
-                                //                                    .onChange(of: width) { _ in
-                                //                                        print("Width: ", width)
-                                //                                    }
-                                //                                    .onChange(of: labelWidth) { _ in
-                                //                                        print("labelWidth: ", labelWidth)
-                                //                                    }
-                                .padding(.trailing, 20)
-                                .padding(.leading, 20)
-                                .padding(.bottom, 5)
-                                
                             }
-                            //Eye Button
-//                            Button(action: {
-//                                self.visible.toggle()
-//                            }) {
-//                                Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
-//                                    .foregroundColor(self.color)
-//                                    .padding(.trailing, 10)
-//                                    .frame(maxWidth: .infinity,
-//                                           alignment: .trailing)
-//                                    .padding(.trailing, 30)
-//                            }
-//                            .frame(alignment: .trailing)
+ 
                         }// textfeildZstack
                     } //end
-                    
-                    
                     
                     HStack {
                         
                         Spacer()
                         Button(action: {
+                            print("Forget Password")
                             path.append(NavigationType.forgetpassword)
                         }) {
                             Text("Forget Password?")
@@ -144,7 +105,8 @@ struct LoginView: View {
                     .padding(.leading, 20)
                     .padding(.bottom, 30)
                 }
-                
+                .padding(.horizontal, 15)
+                .padding(.vertical, 15)
                 HStack {
                     
                     Button(action: {
@@ -177,33 +139,56 @@ struct LoginView: View {
                 }
                 
                 ZStack {
+                    //Socile Media Button
+//                    HStack {
+//                        //Gogle SignIn
+//                        HStack{
+//                            if log_Status {
+//                                //home screen
+////                                path.append(NavigationType.testView)
+//
+//                            } else {
+//                                SocialMediaLoginView( path: .constant(NavigationPath()))
+//                            }
+//                        }
+//
+//                        //Facebook SignIn
+//                        HStack{
+//
+//                        }
+//                    }
                     
-                    HStack {
+                    HStack(spacing: 5) {
+                        
                         Button(action: {
+                            signInWithGoglePage()
                             print("Google Button Action")
                         }) {
                             HStack {
                                 Image("google")
                             }
                         }
+                        
                         Button(action: {
                             print("Twitter Button action")
                         }) {
                             HStack {
                                 Image("twitter")
-                                
                             }
                         }
                         
+                        // fb SIgnin
                         Button(action: {
                             print("Facebook Button action")
-                            
                         }) {
                             HStack {
                                 Image("facebook")
                             }
                         }
+                        
+                        
                     }
+                    
                 }
                 
                 Button(action: {
@@ -220,7 +205,7 @@ struct LoginView: View {
                             )
                     }
                     .padding(.vertical, 10)
-                }
+                }//Register Btn end
             }
             
             if self.alert {
@@ -232,14 +217,134 @@ struct LoginView: View {
         .navigationBarBackButtonHidden()
     }
     
-    func verify(){
+    //Validation
+    func verify() {
+        
         if self.userName != "" && self.password != "" {
-            
+                postdata()
         } else {
             self.error = "Please Enter User Name or Password"
             self.alert.toggle()
         }
     }
+    
+    // Json parsing code
+    func postdata() {
+        
+        let loginModel = LoginModel(userID: self.userName, password: self.password)
+        APIManager.shareInstance.callingLoginApi(login: loginModel) { result in
+            switch result {
+            case .success(let json):
+                print(json as AnyObject)
+                log_Status =  true
+                path.append(NavigationType.homeScreen)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+
+    }
+    
+    //GoogleSign In
+    func signInWithGoglePage() {
+        //get app client id
+        
+        guard let clientId = FirebaseApp.app()?.options.clientID else {return}
+        
+        //GoogleSIgnin Configuration Object
+        let configure = GIDConfiguration(clientID: clientId)
+         
+//        isLoading =  true
+        GIDSignIn.sharedInstance.configuration = configure
+        
+        //signin method goes here
+        GIDSignIn.sharedInstance.signIn(withPresenting: Application_utility.rootViewControler){ [self] user, error in
+            if let error = error{
+                isLoading = false
+                print(error.localizedDescription)
+                return
+            }
+            else{
+                GIDSignIn.sharedInstance.restorePreviousSignIn(){ user,error in
+                    print("New User")
+                    print(user)
+                }
+                
+                GIDSignIn.sharedInstance.hasPreviousSignIn()
+                
+               
+                if(GIDSignIn.sharedInstance.currentUser != nil) {
+                    let user = GIDSignIn.sharedInstance.currentUser
+
+                    guard let user = user else { return }
+                    let userId = user.userID
+                    let fullName = user.profile?.name
+                    let givenName = user.profile?.givenName
+                    let familyName = user.profile?.familyName
+                    let email = user.profile?.email
+
+
+                    let registerModel = RegisterModel(email: email ?? "", password: "", userID: userId ?? "", name: fullName ?? "", phone: "", gender: "", age: "", height: "", weight: "", verification: "", dietitianuserID: "", location: "")
+
+                    APIManager.shareInstance.getSignupData(register: registerModel) { (isSuccess) in
+                        print(registerModel)
+
+                        if isSuccess{
+                            self.error = "Data is successfullySaved"
+                            path.append(NavigationType.homeScreen)
+                        } else {
+                            self.error = "Data Not Saved"
+                        }
+                    }
+                     
+                    
+                    var profilePicUrl = user.profile!.imageURL(withDimension: 100)!.absoluteString
+                    googleUserName = givenName ?? ""
+                    profileUrl =  profilePicUrl
+                    isLoading = true
+                    
+                }else{
+                    isLoggedIn = false
+                    googleUserName = "Not Logged In"
+                    profileUrl =  ""
+                }
+            }
+             
+
+            
+            guard let user = user?.user, let idToken  = user.idToken else {
+                isLoading = false
+                return
+            }
+            
+            let accessToken  = user.accessToken
+            
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString, accessToken: accessToken.tokenString)
+            
+            Auth.auth().signIn(with: credential){ res, error in
+                self.isLoading = false
+                
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                
+                
+                guard let user  = res?.user else{return}
+                
+                print(user.displayName ?? "Success!")
+                
+                // updating user as Logged In
+                withAnimation {
+                    log_Status = true
+                }
+                
+            }
+        }
+        
+    }
+    
+    
 }
 
 struct LoginView_Previews: PreviewProvider {

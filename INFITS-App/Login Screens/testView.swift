@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct testView: View {
+    @Binding var path : NavigationPath
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
@@ -15,6 +16,6 @@ struct testView: View {
 
 struct testView_Previews: PreviewProvider {
     static var previews: some View {
-        testView()
+        testView(path: .constant(NavigationPath()))
     }
 }

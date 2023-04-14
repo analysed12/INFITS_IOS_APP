@@ -23,7 +23,7 @@ struct ForgetPassword: View {
             
             .ignoresSafeArea()
             
-            VStack{
+            VStack {
                 Image("forget-password")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -71,9 +71,11 @@ struct ForgetPassword: View {
 //                    .padding(.bottom, 20)
                 }
                 //Back to login page
-                HStack{
+                HStack {
                         Button(action: {
-                            path.append(NavigationType.login)
+//                            path = NavigationPath()
+//                            path.append(NavigationType.login)
+                            path.removeLast()
                         }) {
                             Image(systemName: "arrow.backward.circle.fill")
                                 .foregroundColor(Color.white)

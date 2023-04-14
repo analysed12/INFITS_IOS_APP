@@ -13,26 +13,22 @@ struct TextFieldCustom: View {
     @State private var width = CGFloat.zero
     @State private var labelWidth = CGFloat.zero
     @State private var isEditing = false
-    
+ 
     public init(placeHolder: String,
                  text: Binding<String>) {
          self._text = text
          self.placeholder = placeHolder
-     }
+      }
     
     
     
     var body: some View {
-//        TextField("Enter User Name", text: $text, onEditingChanged: { (edit) in
-//                        isEditing = edit
-//                    })
-        
-           TextField(placeholder, text: $text, prompt: Text("User Name").foregroundColor(.white))
+           TextField(placeholder, text: $text, prompt: Text(placeholder).foregroundColor(.white))
                .foregroundColor(.white)
                .font(Font.custom("NATS 400", size: 17))
                .padding(EdgeInsets(top: 15, leading: 10, bottom: 15, trailing: 10))
-//
-               .background {
+               .autocapitalization(.none)
+                .background {
                    ZStack {
                        RoundedRectangle(cornerRadius: 5)
                            .trim(from: 0, to: 0.55)
@@ -51,8 +47,7 @@ struct TextFieldCustom: View {
                            .frame(maxWidth: .infinity,
                                   maxHeight: .infinity,
                                   alignment: .topLeading)
-                           .offset(x: 20, y: -15)
-
+                           .offset(x: 20, y: -12)
                    }
                }
                .overlay( GeometryReader { geo in Color.clear.onAppear { width = geo.size.width }})

@@ -6,8 +6,14 @@
 //
 
 import SwiftUI
+import GoogleSignIn
+import Firebase
 
 struct SideMenuView: View {
+    @AppStorage("log_Status") var log_Status = false
+    //Navigation
+    @Binding var path : NavigationPath
+    
     var body: some View {
         ZStack {
             VStack {
@@ -27,7 +33,17 @@ struct SideMenuView: View {
                     listButton(name: "Recipies")
                     listButton(name: "Mail")
                     listButton(name: "Settings")
-                }
+                    
+                    Button("Logout") {
+                        GIDSignIn.sharedInstance.signOut()
+                        try? Auth.auth().signOut()
+                        
+                        withAnimation {
+                            log_Status = false
+                            path.append(NavigationType.login)
+                        }
+                    }
+                 }
                 
                 Spacer()
                 HStack {
@@ -57,7 +73,7 @@ struct SideMenuView: View {
 
 struct SideMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuView()
+        SideMenuView(path: .constant(NavigationPath()))
     }
 }
 
@@ -81,3 +97,6 @@ struct listButton: View {
     }
 }
 
+
+
+//hie , I have one more issue , user signing through google then we get userID and user redirect in dashboard screen when user logout and again try signin  through same account then he get duplicate data error so how you manage in android

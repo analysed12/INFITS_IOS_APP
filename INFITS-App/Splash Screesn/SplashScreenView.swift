@@ -20,6 +20,8 @@ struct SplashScreenView: View {
                 SplashScreen(path: $path)
                     .navigationDestination(for: NavigationType.self) { value in
                         switch value{
+                        case .splash :
+                            SplashScreen(path: $path)
                         case .signup:
                             SignupView(path: $path)
                         case .login:
@@ -32,10 +34,8 @@ struct SplashScreenView: View {
                             CheckMailView(path: $path)
                         case .homeScreen :
                             HomeScreen(path: $path)
-                        case .testView :
-                            testView(path: $path)
-                        case .splash :
-                            SplashScreen(path: $path)
+                        case .stepTracker :
+                            StepTracker(path: $path)
                         }
                     }
             } else {
@@ -49,9 +49,6 @@ struct SplashScreenView: View {
                         withAnimation(.easeIn(duration: 1.2)){
                             self.size = 1.5
                             self.opacity = 1.0
-//                            if log_Status {
-//                                path.append(NavigationType.homeScreen)
-//                            }
                         }
                     }
                     .onAppear{
@@ -67,6 +64,8 @@ struct SplashScreenView: View {
                 }
                 .navigationDestination(for: NavigationType.self) { value in
                     switch value{
+                    case .splash :
+                        SplashScreen(path: $path)
                     case .signup:
                         SignupView(path: $path)
                     case .login:
@@ -79,10 +78,8 @@ struct SplashScreenView: View {
                         CheckMailView(path: $path)
                     case .homeScreen :
                         HomeScreen(path: $path)
-                    case .testView :
-                        testView(path: $path)
-                    case .splash :
-                        SplashScreen(path: $path)
+                    case .stepTracker :
+                        StepTracker(path: $path)
                     }
                 }
             }
