@@ -1,0 +1,849 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E81107BA29BB0C540090B5F3 /* INFITS_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81107B929BB0C540090B5F3 /* INFITS_AppApp.swift */; };
+		E81107BC29BB0C540090B5F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81107BB29BB0C540090B5F3 /* ContentView.swift */; };
+		E81107BE29BB0C550090B5F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E81107BD29BB0C550090B5F3 /* Assets.xcassets */; };
+		E81107C129BB0C550090B5F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E81107C029BB0C550090B5F3 /* Preview Assets.xcassets */; };
+		E81107CE29BB0C880090B5F3 /* SplashContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81107CB29BB0C880090B5F3 /* SplashContent.swift */; };
+		E81107D129BB0C9F0090B5F3 /* NavigationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81107D029BB0C9F0090B5F3 /* NavigationType.swift */; };
+		E81107D429BB0CC50090B5F3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81107D329BB0CC50090B5F3 /* LoginView.swift */; };
+		E81107D629BB0CCD0090B5F3 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81107D529BB0CCD0090B5F3 /* SignupView.swift */; };
+		E81107D829BB0CD40090B5F3 /* ForgetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81107D729BB0CD40090B5F3 /* ForgetPassword.swift */; };
+		E81107DA29BB0CDC0090B5F3 /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81107D929BB0CDC0090B5F3 /* ChangePassword.swift */; };
+		E81107DC29BB0CE50090B5F3 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81107DB29BB0CE50090B5F3 /* TermsView.swift */; };
+		E81107DF29BB0D190090B5F3 /* TextFieldCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81107DE29BB0D190090B5F3 /* TextFieldCustom.swift */; };
+		E81107E129BB0D370090B5F3 /* CheckMailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81107E029BB0D370090B5F3 /* CheckMailView.swift */; };
+		E81107E329BB0D4B0090B5F3 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81107E229BB0D4B0090B5F3 /* ErrorView.swift */; };
+		E81107E829BB13E80090B5F3 /* Application_utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81107E729BB13E70090B5F3 /* Application_utility.swift */; };
+		E81107EB29BB14060090B5F3 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = E81107EA29BB14060090B5F3 /* GoogleSignIn */; };
+		E81107ED29BB14060090B5F3 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E81107EC29BB14060090B5F3 /* GoogleSignInSwift */; };
+		E81107F029BB154B0090B5F3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E81107EF29BB154B0090B5F3 /* FirebaseAuth */; };
+		E82DDAFA29C068AF006A2BF2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82DDAF929C068AF006A2BF2 /* String+Extensions.swift */; };
+		E83D0C1C29E3E7A200793731 /* Json4Swift_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83D0C1B29E3E7A200793731 /* Json4Swift_Base.swift */; };
+		E83D0C2429E4675800793731 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83D0C2329E4675800793731 /* SplashScreenView.swift */; };
+		E83D0C2629E4676800793731 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83D0C2529E4676800793731 /* SplashScreen.swift */; };
+		E841AD4229DEC9E000A9D69A /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = E841AD4129DEC9E000A9D69A /* FacebookLogin */; };
+		E841AD5229DECEF200A9D69A /* SocialMediaLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E841AD5129DECEF200A9D69A /* SocialMediaLoginView.swift */; };
+		E841AD5429DECFCE00A9D69A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E841AD5329DECFCE00A9D69A /* SceneDelegate.swift */; };
+		E850F72629BF07B6005AFC6C /* CheckURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E850F72529BF07B6005AFC6C /* CheckURL.swift */; };
+		E850F72D29BF8BA3005AFC6C /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E850F72C29BF8BA3005AFC6C /* SignUpViewModel.swift */; };
+		E86BBE8E29DD68CA003A5D24 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E86BBE8D29DD68CA003A5D24 /* GoogleService-Info.plist */; };
+		E86BBE9029DD792D003A5D24 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86BBE8F29DD792D003A5D24 /* testView.swift */; };
+		E88512A029E6BA2B0026B398 /* CaloriesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E885129C29E6BA2B0026B398 /* CaloriesData.swift */; };
+		E88512A129E6BA2B0026B398 /* FoodData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E885129D29E6BA2B0026B398 /* FoodData.swift */; };
+		E88512A229E6BA2B0026B398 /* TodayFoodList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E885129E29E6BA2B0026B398 /* TodayFoodList.swift */; };
+		E88512A329E6BA2B0026B398 /* TabSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E885129F29E6BA2B0026B398 /* TabSection.swift */; };
+		E88512A529E6BA460026B398 /* PopUpWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88512A429E6BA460026B398 /* PopUpWindow.swift */; };
+		E88512B029E6BD410026B398 /* BreakFastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88512AF29E6BD410026B398 /* BreakFastView.swift */; };
+		E88512B229E6BDA50026B398 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88512B129E6BDA50026B398 /* CustomTabBar.swift */; };
+		E88512B429E6BDD70026B398 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88512B329E6BDD70026B398 /* TabBarButton.swift */; };
+		E88512B729E6BE2B0026B398 /* FavouritesFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88512B629E6BE2A0026B398 /* FavouritesFoodView.swift */; };
+		E88512B929E6BE4F0026B398 /* RecentFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88512B829E6BE4F0026B398 /* RecentFoodView.swift */; };
+		E88512BB29E6BE730026B398 /* FrequentFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88512BA29E6BE730026B398 /* FrequentFoodView.swift */; };
+		E88512BD29E6BE9C0026B398 /* CaloriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88512BC29E6BE9C0026B398 /* CaloriesView.swift */; };
+		E88512BF29E6BEBF0026B398 /* CircleTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88512BE29E6BEBF0026B398 /* CircleTabBar.swift */; };
+		E88512C129E6BEDF0026B398 /* CircleCustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88512C029E6BEDF0026B398 /* CircleCustomTabbar.swift */; };
+		E88512C429E6BF3A0026B398 /* CaloriesConsumedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88512C329E6BF3A0026B398 /* CaloriesConsumedView.swift */; };
+		E88512C629E6BF520026B398 /* CaloriesBurntView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88512C529E6BF520026B398 /* CaloriesBurntView.swift */; };
+		E88512C929E6BF9D0026B398 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88512C829E6BF9D0026B398 /* PieChartView.swift */; };
+		E88512CB29E6BFB20026B398 /* PieSliceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88512CA29E6BFB20026B398 /* PieSliceView.swift */; };
+		E88512CE29E6C0050026B398 /* NutrientsBreakdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88512CD29E6C0050026B398 /* NutrientsBreakdown.swift */; };
+		E88512D029E6C04C0026B398 /* TakePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88512CF29E6C04C0026B398 /* TakePhotoView.swift */; };
+		E88512D229E6C06A0026B398 /* TodayBreakFast.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88512D129E6C06A0026B398 /* TodayBreakFast.swift */; };
+		E88512D729E6C27B0026B398 /* LunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88512D629E6C27B0026B398 /* LunchListView.swift */; };
+		E88512D929E6C28F0026B398 /* SnacksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88512D829E6C28F0026B398 /* SnacksListView.swift */; };
+		E88B310429E7E57D00B13EA4 /* StepTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B310329E7E57D00B13EA4 /* StepTracker.swift */; };
+		E8B55BD629DBFD3B000BDE3F /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B55BD529DBFD3B000BDE3F /* HomeScreen.swift */; };
+		E8B55BD829DBFD86000BDE3F /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B55BD729DBFD86000BDE3F /* SideMenuView.swift */; };
+		F02ADED329C9A9D6008E16CE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02ADED229C9A9D6008E16CE /* Constant.swift */; };
+		F02ADED529C9A9F9008E16CE /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02ADED429C9A9F9008E16CE /* APIManager.swift */; };
+		F02ADED729C9AA16008E16CE /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02ADED629C9AA16008E16CE /* RegisterModel.swift */; };
+		F02ADED929C9AA25008E16CE /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02ADED829C9AA25008E16CE /* LoginModel.swift */; };
+		F02ADEDC29C9AB2A008E16CE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F02ADEDB29C9AB2A008E16CE /* Alamofire */; };
+		F0578AF42A15F9340046992D /* PastActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0578AF12A15F9340046992D /* PastActivityView.swift */; };
+		F0578AF52A15F9340046992D /* SetWaterGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0578AF22A15F9340046992D /* SetWaterGoalView.swift */; };
+		F0578AF62A15F9340046992D /* WaterTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0578AF32A15F9340046992D /* WaterTrackerView.swift */; };
+		F0578AF92A15FAC60046992D /* SetGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0578AF72A15FAC60046992D /* SetGoalView.swift */; };
+		F0578AFA2A15FAC60046992D /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0578AF82A15FAC60046992D /* HealthStore.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E81107B629BB0C540090B5F3 /* INFITS-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "INFITS-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E81107B929BB0C540090B5F3 /* INFITS_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INFITS_AppApp.swift; sourceTree = "<group>"; };
+		E81107BB29BB0C540090B5F3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E81107BD29BB0C550090B5F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E81107C029BB0C550090B5F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E81107CB29BB0C880090B5F3 /* SplashContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashContent.swift; sourceTree = "<group>"; };
+		E81107D029BB0C9F0090B5F3 /* NavigationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationType.swift; sourceTree = "<group>"; };
+		E81107D329BB0CC50090B5F3 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E81107D529BB0CCD0090B5F3 /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		E81107D729BB0CD40090B5F3 /* ForgetPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPassword.swift; sourceTree = "<group>"; };
+		E81107D929BB0CDC0090B5F3 /* ChangePassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
+		E81107DB29BB0CE50090B5F3 /* TermsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
+		E81107DE29BB0D190090B5F3 /* TextFieldCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCustom.swift; sourceTree = "<group>"; };
+		E81107E029BB0D370090B5F3 /* CheckMailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckMailView.swift; sourceTree = "<group>"; };
+		E81107E229BB0D4B0090B5F3 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		E81107E729BB13E70090B5F3 /* Application_utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application_utility.swift; sourceTree = "<group>"; };
+		E82DDAF929C068AF006A2BF2 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		E83D0C1B29E3E7A200793731 /* Json4Swift_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json4Swift_Base.swift; sourceTree = "<group>"; };
+		E83D0C2329E4675800793731 /* SplashScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		E83D0C2529E4676800793731 /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		E841AD4329DECBFC00A9D69A /* INFITS-AppDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "INFITS-AppDebug.entitlements"; sourceTree = "<group>"; };
+		E841AD5129DECEF200A9D69A /* SocialMediaLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaLoginView.swift; sourceTree = "<group>"; };
+		E841AD5329DECFCE00A9D69A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E850F72529BF07B6005AFC6C /* CheckURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckURL.swift; sourceTree = "<group>"; };
+		E850F72729BF08A4005AFC6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E850F72C29BF8BA3005AFC6C /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		E86BBE8D29DD68CA003A5D24 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E86BBE8F29DD792D003A5D24 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
+		E885129029E6B9B80026B398 /* picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = picker.swift; sourceTree = "<group>"; };
+		E885129129E6B9B80026B398 /* CustomPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
+		E885129C29E6BA2B0026B398 /* CaloriesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaloriesData.swift; sourceTree = "<group>"; };
+		E885129D29E6BA2B0026B398 /* FoodData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodData.swift; sourceTree = "<group>"; };
+		E885129E29E6BA2B0026B398 /* TodayFoodList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayFoodList.swift; sourceTree = "<group>"; };
+		E885129F29E6BA2B0026B398 /* TabSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabSection.swift; sourceTree = "<group>"; };
+		E88512A429E6BA460026B398 /* PopUpWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpWindow.swift; sourceTree = "<group>"; };
+		E88512AF29E6BD410026B398 /* BreakFastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakFastView.swift; sourceTree = "<group>"; };
+		E88512B129E6BDA50026B398 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		E88512B329E6BDD70026B398 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
+		E88512B629E6BE2A0026B398 /* FavouritesFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesFoodView.swift; sourceTree = "<group>"; };
+		E88512B829E6BE4F0026B398 /* RecentFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentFoodView.swift; sourceTree = "<group>"; };
+		E88512BA29E6BE730026B398 /* FrequentFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentFoodView.swift; sourceTree = "<group>"; };
+		E88512BC29E6BE9C0026B398 /* CaloriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesView.swift; sourceTree = "<group>"; };
+		E88512BE29E6BEBF0026B398 /* CircleTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTabBar.swift; sourceTree = "<group>"; };
+		E88512C029E6BEDF0026B398 /* CircleCustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCustomTabbar.swift; sourceTree = "<group>"; };
+		E88512C329E6BF3A0026B398 /* CaloriesConsumedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesConsumedView.swift; sourceTree = "<group>"; };
+		E88512C529E6BF520026B398 /* CaloriesBurntView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesBurntView.swift; sourceTree = "<group>"; };
+		E88512C829E6BF9D0026B398 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
+		E88512CA29E6BFB20026B398 /* PieSliceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceView.swift; sourceTree = "<group>"; };
+		E88512CD29E6C0050026B398 /* NutrientsBreakdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsBreakdown.swift; sourceTree = "<group>"; };
+		E88512CF29E6C04C0026B398 /* TakePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotoView.swift; sourceTree = "<group>"; };
+		E88512D129E6C06A0026B398 /* TodayBreakFast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayBreakFast.swift; sourceTree = "<group>"; };
+		E88512D629E6C27B0026B398 /* LunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchListView.swift; sourceTree = "<group>"; };
+		E88512D829E6C28F0026B398 /* SnacksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacksListView.swift; sourceTree = "<group>"; };
+		E88B310329E7E57D00B13EA4 /* StepTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTracker.swift; sourceTree = "<group>"; };
+		E8B55BD529DBFD3B000BDE3F /* HomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		E8B55BD729DBFD86000BDE3F /* SideMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		F02ADED229C9A9D6008E16CE /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		F02ADED429C9A9F9008E16CE /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F02ADED629C9AA16008E16CE /* RegisterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		F02ADED829C9AA25008E16CE /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		F0578AF12A15F9340046992D /* PastActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastActivityView.swift; sourceTree = "<group>"; };
+		F0578AF22A15F9340046992D /* SetWaterGoalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetWaterGoalView.swift; sourceTree = "<group>"; };
+		F0578AF32A15F9340046992D /* WaterTrackerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterTrackerView.swift; sourceTree = "<group>"; };
+		F0578AF72A15FAC60046992D /* SetGoalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetGoalView.swift; sourceTree = "<group>"; };
+		F0578AF82A15FAC60046992D /* HealthStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E81107B329BB0C540090B5F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E841AD4229DEC9E000A9D69A /* FacebookLogin in Frameworks */,
+				E81107EB29BB14060090B5F3 /* GoogleSignIn in Frameworks */,
+				F02ADEDC29C9AB2A008E16CE /* Alamofire in Frameworks */,
+				E81107F029BB154B0090B5F3 /* FirebaseAuth in Frameworks */,
+				E81107ED29BB14060090B5F3 /* GoogleSignInSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E81107AD29BB0C540090B5F3 = {
+			isa = PBXGroup;
+			children = (
+				E81107B829BB0C540090B5F3 /* INFITS-App */,
+				E81107B729BB0C540090B5F3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E81107B729BB0C540090B5F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E81107B629BB0C540090B5F3 /* INFITS-App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E81107B829BB0C540090B5F3 /* INFITS-App */ = {
+			isa = PBXGroup;
+			children = (
+				E841AD4329DECBFC00A9D69A /* INFITS-AppDebug.entitlements */,
+				E850F72729BF08A4005AFC6C /* Info.plist */,
+				E81107B929BB0C540090B5F3 /* INFITS_AppApp.swift */,
+				E81107BB29BB0C540090B5F3 /* ContentView.swift */,
+				E81107C929BB0C6E0090B5F3 /* Splash Screesn */,
+				E81107C729BB0C590090B5F3 /* Login Screens */,
+				E81107C829BB0C610090B5F3 /* Dashboard Screens */,
+				F0578AF02A15F8380046992D /* water tracker */,
+				E8EEF9BA29E7DE89002F7693 /* Step Tracker */,
+				E88512AE29E6BD290026B398 /* CalorieTracker */,
+				E88512D329E6C0A60026B398 /* DailyFoodList */,
+				E88512CC29E6BFE20026B398 /* DietChart */,
+				E88512C229E6BF220026B398 /* CaloriesBurntView */,
+				E88512C729E6BF8B0026B398 /* Chart */,
+				E88512B529E6BE070026B398 /* FoodSegment */,
+				E81107D229BB0CA90090B5F3 /* Navigation File */,
+				E841AD4F29DECEA500A9D69A /* SocileMedia Login */,
+				E885128E29E6B9B80026B398 /* CustomeCode */,
+				E81107DD29BB0D0C0090B5F3 /* Custome Classes */,
+				F02ADED129C9A98D008E16CE /*  JSON */,
+				E850F72429BF079C005AFC6C /* Localhost url */,
+				E850F72B29BF8B90005AFC6C /* Model */,
+				E82DDAF629C051B9006A2BF2 /* Error Messages  */,
+				E81107BD29BB0C550090B5F3 /* Assets.xcassets */,
+				E86BBE8D29DD68CA003A5D24 /* GoogleService-Info.plist */,
+				E81107BF29BB0C550090B5F3 /* Preview Content */,
+			);
+			path = "INFITS-App";
+			sourceTree = "<group>";
+		};
+		E81107BF29BB0C550090B5F3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E81107C029BB0C550090B5F3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E81107C729BB0C590090B5F3 /* Login Screens */ = {
+			isa = PBXGroup;
+			children = (
+				E81107D329BB0CC50090B5F3 /* LoginView.swift */,
+				E81107D529BB0CCD0090B5F3 /* SignupView.swift */,
+				E81107D729BB0CD40090B5F3 /* ForgetPassword.swift */,
+				E81107D929BB0CDC0090B5F3 /* ChangePassword.swift */,
+				E81107DB29BB0CE50090B5F3 /* TermsView.swift */,
+				E81107E029BB0D370090B5F3 /* CheckMailView.swift */,
+				E82DDAF929C068AF006A2BF2 /* String+Extensions.swift */,
+				E86BBE8F29DD792D003A5D24 /* testView.swift */,
+			);
+			path = "Login Screens";
+			sourceTree = "<group>";
+		};
+		E81107C829BB0C610090B5F3 /* Dashboard Screens */ = {
+			isa = PBXGroup;
+			children = (
+				E8B55BD529DBFD3B000BDE3F /* HomeScreen.swift */,
+				E8B55BD729DBFD86000BDE3F /* SideMenuView.swift */,
+			);
+			path = "Dashboard Screens";
+			sourceTree = "<group>";
+		};
+		E81107C929BB0C6E0090B5F3 /* Splash Screesn */ = {
+			isa = PBXGroup;
+			children = (
+				E81107CB29BB0C880090B5F3 /* SplashContent.swift */,
+				E83D0C2529E4676800793731 /* SplashScreen.swift */,
+				E83D0C2329E4675800793731 /* SplashScreenView.swift */,
+			);
+			path = "Splash Screesn";
+			sourceTree = "<group>";
+		};
+		E81107D229BB0CA90090B5F3 /* Navigation File */ = {
+			isa = PBXGroup;
+			children = (
+				E81107D029BB0C9F0090B5F3 /* NavigationType.swift */,
+			);
+			path = "Navigation File";
+			sourceTree = "<group>";
+		};
+		E81107DD29BB0D0C0090B5F3 /* Custome Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E81107DE29BB0D190090B5F3 /* TextFieldCustom.swift */,
+				E88512B129E6BDA50026B398 /* CustomTabBar.swift */,
+				E88512B329E6BDD70026B398 /* TabBarButton.swift */,
+				E88512BE29E6BEBF0026B398 /* CircleTabBar.swift */,
+				E88512C029E6BEDF0026B398 /* CircleCustomTabbar.swift */,
+			);
+			path = "Custome Classes";
+			sourceTree = "<group>";
+		};
+		E81107E429BB13880090B5F3 /* GoogleSignIn  */ = {
+			isa = PBXGroup;
+			children = (
+				E81107E729BB13E70090B5F3 /* Application_utility.swift */,
+			);
+			path = "GoogleSignIn ";
+			sourceTree = "<group>";
+		};
+		E82DDAF629C051B9006A2BF2 /* Error Messages  */ = {
+			isa = PBXGroup;
+			children = (
+				E81107E229BB0D4B0090B5F3 /* ErrorView.swift */,
+				E88512A429E6BA460026B398 /* PopUpWindow.swift */,
+			);
+			path = "Error Messages ";
+			sourceTree = "<group>";
+		};
+		E841AD4F29DECEA500A9D69A /* SocileMedia Login */ = {
+			isa = PBXGroup;
+			children = (
+				E841AD5129DECEF200A9D69A /* SocialMediaLoginView.swift */,
+				E841AD5029DECEC000A9D69A /* FacebookLogin */,
+				E81107E429BB13880090B5F3 /* GoogleSignIn  */,
+			);
+			path = "SocileMedia Login";
+			sourceTree = "<group>";
+		};
+		E841AD5029DECEC000A9D69A /* FacebookLogin */ = {
+			isa = PBXGroup;
+			children = (
+				E841AD5329DECFCE00A9D69A /* SceneDelegate.swift */,
+			);
+			path = FacebookLogin;
+			sourceTree = "<group>";
+		};
+		E850F72429BF079C005AFC6C /* Localhost url */ = {
+			isa = PBXGroup;
+			children = (
+				E850F72529BF07B6005AFC6C /* CheckURL.swift */,
+			);
+			path = "Localhost url";
+			sourceTree = "<group>";
+		};
+		E850F72B29BF8B90005AFC6C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E885129B29E6BA1D0026B398 /* CalorieTrackerModel */,
+				E850F72C29BF8BA3005AFC6C /* SignUpViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E885128E29E6B9B80026B398 /* CustomeCode */ = {
+			isa = PBXGroup;
+			children = (
+				E885128F29E6B9B80026B398 /* CustomPicker */,
+			);
+			path = CustomeCode;
+			sourceTree = "<group>";
+		};
+		E885128F29E6B9B80026B398 /* CustomPicker */ = {
+			isa = PBXGroup;
+			children = (
+				E885129029E6B9B80026B398 /* picker.swift */,
+				E885129129E6B9B80026B398 /* CustomPicker.swift */,
+			);
+			path = CustomPicker;
+			sourceTree = "<group>";
+		};
+		E885129B29E6BA1D0026B398 /* CalorieTrackerModel */ = {
+			isa = PBXGroup;
+			children = (
+				E885129C29E6BA2B0026B398 /* CaloriesData.swift */,
+				E885129D29E6BA2B0026B398 /* FoodData.swift */,
+				E885129F29E6BA2B0026B398 /* TabSection.swift */,
+				E885129E29E6BA2B0026B398 /* TodayFoodList.swift */,
+			);
+			path = CalorieTrackerModel;
+			sourceTree = "<group>";
+		};
+		E88512AE29E6BD290026B398 /* CalorieTracker */ = {
+			isa = PBXGroup;
+			children = (
+				E88512AF29E6BD410026B398 /* BreakFastView.swift */,
+				E88512BC29E6BE9C0026B398 /* CaloriesView.swift */,
+				E88512CF29E6C04C0026B398 /* TakePhotoView.swift */,
+				E88512D129E6C06A0026B398 /* TodayBreakFast.swift */,
+			);
+			path = CalorieTracker;
+			sourceTree = "<group>";
+		};
+		E88512B529E6BE070026B398 /* FoodSegment */ = {
+			isa = PBXGroup;
+			children = (
+				E88512B629E6BE2A0026B398 /* FavouritesFoodView.swift */,
+				E88512B829E6BE4F0026B398 /* RecentFoodView.swift */,
+				E88512BA29E6BE730026B398 /* FrequentFoodView.swift */,
+			);
+			path = FoodSegment;
+			sourceTree = "<group>";
+		};
+		E88512C229E6BF220026B398 /* CaloriesBurntView */ = {
+			isa = PBXGroup;
+			children = (
+				E88512C329E6BF3A0026B398 /* CaloriesConsumedView.swift */,
+				E88512C529E6BF520026B398 /* CaloriesBurntView.swift */,
+			);
+			path = CaloriesBurntView;
+			sourceTree = "<group>";
+		};
+		E88512C729E6BF8B0026B398 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				E88512C829E6BF9D0026B398 /* PieChartView.swift */,
+				E88512CA29E6BFB20026B398 /* PieSliceView.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		E88512CC29E6BFE20026B398 /* DietChart */ = {
+			isa = PBXGroup;
+			children = (
+				E88512CD29E6C0050026B398 /* NutrientsBreakdown.swift */,
+			);
+			path = DietChart;
+			sourceTree = "<group>";
+		};
+		E88512D329E6C0A60026B398 /* DailyFoodList */ = {
+			isa = PBXGroup;
+			children = (
+				E88512D629E6C27B0026B398 /* LunchListView.swift */,
+				E88512D829E6C28F0026B398 /* SnacksListView.swift */,
+			);
+			path = DailyFoodList;
+			sourceTree = "<group>";
+		};
+		E8EEF9BA29E7DE89002F7693 /* Step Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				E88B310329E7E57D00B13EA4 /* StepTracker.swift */,
+				F0578AF82A15FAC60046992D /* HealthStore.swift */,
+				F0578AF72A15FAC60046992D /* SetGoalView.swift */,
+			);
+			path = "Step Tracker";
+			sourceTree = "<group>";
+		};
+		F02ADED129C9A98D008E16CE /*  JSON */ = {
+			isa = PBXGroup;
+			children = (
+				F02ADED429C9A9F9008E16CE /* APIManager.swift */,
+				F02ADED829C9AA25008E16CE /* LoginModel.swift */,
+				F02ADED629C9AA16008E16CE /* RegisterModel.swift */,
+				F02ADED229C9A9D6008E16CE /* Constant.swift */,
+				E83D0C1B29E3E7A200793731 /* Json4Swift_Base.swift */,
+			);
+			path = " JSON";
+			sourceTree = "<group>";
+		};
+		F0578AF02A15F8380046992D /* water tracker */ = {
+			isa = PBXGroup;
+			children = (
+				F0578AF12A15F9340046992D /* PastActivityView.swift */,
+				F0578AF22A15F9340046992D /* SetWaterGoalView.swift */,
+				F0578AF32A15F9340046992D /* WaterTrackerView.swift */,
+			);
+			path = "water tracker";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E81107B529BB0C540090B5F3 /* INFITS-App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E81107C429BB0C550090B5F3 /* Build configuration list for PBXNativeTarget "INFITS-App" */;
+			buildPhases = (
+				E81107B229BB0C540090B5F3 /* Sources */,
+				E81107B329BB0C540090B5F3 /* Frameworks */,
+				E81107B429BB0C540090B5F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "INFITS-App";
+			packageProductDependencies = (
+				E81107EA29BB14060090B5F3 /* GoogleSignIn */,
+				E81107EC29BB14060090B5F3 /* GoogleSignInSwift */,
+				E81107EF29BB154B0090B5F3 /* FirebaseAuth */,
+				F02ADEDB29C9AB2A008E16CE /* Alamofire */,
+				E841AD4129DEC9E000A9D69A /* FacebookLogin */,
+			);
+			productName = "INFITS-App";
+			productReference = E81107B629BB0C540090B5F3 /* INFITS-App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E81107AE29BB0C540090B5F3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					E81107B529BB0C540090B5F3 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = E81107B129BB0C540090B5F3 /* Build configuration list for PBXProject "INFITS-App" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E81107AD29BB0C540090B5F3;
+			packageReferences = (
+				E81107E929BB14060090B5F3 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				E81107EE29BB154B0090B5F3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F02ADEDA29C9AB2A008E16CE /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E841AD4029DEC9E000A9D69A /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
+			productRefGroup = E81107B729BB0C540090B5F3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E81107B529BB0C540090B5F3 /* INFITS-App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E81107B429BB0C540090B5F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E81107C129BB0C550090B5F3 /* Preview Assets.xcassets in Resources */,
+				E81107BE29BB0C550090B5F3 /* Assets.xcassets in Resources */,
+				E86BBE8E29DD68CA003A5D24 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E81107B229BB0C540090B5F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E81107DF29BB0D190090B5F3 /* TextFieldCustom.swift in Sources */,
+				E81107CE29BB0C880090B5F3 /* SplashContent.swift in Sources */,
+				E88512A129E6BA2B0026B398 /* FoodData.swift in Sources */,
+				E81107D429BB0CC50090B5F3 /* LoginView.swift in Sources */,
+				F0578AFA2A15FAC60046992D /* HealthStore.swift in Sources */,
+				E88512B029E6BD410026B398 /* BreakFastView.swift in Sources */,
+				E88512B429E6BDD70026B398 /* TabBarButton.swift in Sources */,
+				F0578AF92A15FAC60046992D /* SetGoalView.swift in Sources */,
+				E81107E129BB0D370090B5F3 /* CheckMailView.swift in Sources */,
+				E850F72D29BF8BA3005AFC6C /* SignUpViewModel.swift in Sources */,
+				E83D0C1C29E3E7A200793731 /* Json4Swift_Base.swift in Sources */,
+				F0578AF42A15F9340046992D /* PastActivityView.swift in Sources */,
+				E88512D929E6C28F0026B398 /* SnacksListView.swift in Sources */,
+				F02ADED729C9AA16008E16CE /* RegisterModel.swift in Sources */,
+				F0578AF52A15F9340046992D /* SetWaterGoalView.swift in Sources */,
+				E88512C629E6BF520026B398 /* CaloriesBurntView.swift in Sources */,
+				E88512BD29E6BE9C0026B398 /* CaloriesView.swift in Sources */,
+				E8B55BD829DBFD86000BDE3F /* SideMenuView.swift in Sources */,
+				E88512C129E6BEDF0026B398 /* CircleCustomTabbar.swift in Sources */,
+				F02ADED529C9A9F9008E16CE /* APIManager.swift in Sources */,
+				E88512BB29E6BE730026B398 /* FrequentFoodView.swift in Sources */,
+				E850F72629BF07B6005AFC6C /* CheckURL.swift in Sources */,
+				E88512A029E6BA2B0026B398 /* CaloriesData.swift in Sources */,
+				E88512A329E6BA2B0026B398 /* TabSection.swift in Sources */,
+				F02ADED329C9A9D6008E16CE /* Constant.swift in Sources */,
+				E81107DA29BB0CDC0090B5F3 /* ChangePassword.swift in Sources */,
+				E88512D229E6C06A0026B398 /* TodayBreakFast.swift in Sources */,
+				E88512B229E6BDA50026B398 /* CustomTabBar.swift in Sources */,
+				E841AD5429DECFCE00A9D69A /* SceneDelegate.swift in Sources */,
+				E86BBE9029DD792D003A5D24 /* testView.swift in Sources */,
+				F02ADED929C9AA25008E16CE /* LoginModel.swift in Sources */,
+				E81107D629BB0CCD0090B5F3 /* SignupView.swift in Sources */,
+				E83D0C2629E4676800793731 /* SplashScreen.swift in Sources */,
+				E81107D829BB0CD40090B5F3 /* ForgetPassword.swift in Sources */,
+				E88512CB29E6BFB20026B398 /* PieSliceView.swift in Sources */,
+				E88512D729E6C27B0026B398 /* LunchListView.swift in Sources */,
+				E81107BC29BB0C540090B5F3 /* ContentView.swift in Sources */,
+				E88512A529E6BA460026B398 /* PopUpWindow.swift in Sources */,
+				E88512BF29E6BEBF0026B398 /* CircleTabBar.swift in Sources */,
+				E82DDAFA29C068AF006A2BF2 /* String+Extensions.swift in Sources */,
+				E81107E829BB13E80090B5F3 /* Application_utility.swift in Sources */,
+				E83D0C2429E4675800793731 /* SplashScreenView.swift in Sources */,
+				E81107BA29BB0C540090B5F3 /* INFITS_AppApp.swift in Sources */,
+				F0578AF62A15F9340046992D /* WaterTrackerView.swift in Sources */,
+				E88512A229E6BA2B0026B398 /* TodayFoodList.swift in Sources */,
+				E88B310429E7E57D00B13EA4 /* StepTracker.swift in Sources */,
+				E88512C929E6BF9D0026B398 /* PieChartView.swift in Sources */,
+				E88512B729E6BE2B0026B398 /* FavouritesFoodView.swift in Sources */,
+				E8B55BD629DBFD3B000BDE3F /* HomeScreen.swift in Sources */,
+				E88512D029E6C04C0026B398 /* TakePhotoView.swift in Sources */,
+				E88512C429E6BF3A0026B398 /* CaloriesConsumedView.swift in Sources */,
+				E88512B929E6BE4F0026B398 /* RecentFoodView.swift in Sources */,
+				E841AD5229DECEF200A9D69A /* SocialMediaLoginView.swift in Sources */,
+				E81107E329BB0D4B0090B5F3 /* ErrorView.swift in Sources */,
+				E81107D129BB0C9F0090B5F3 /* NavigationType.swift in Sources */,
+				E81107DC29BB0CE50090B5F3 /* TermsView.swift in Sources */,
+				E88512CE29E6C0050026B398 /* NutrientsBreakdown.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E81107C229BB0C550090B5F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E81107C329BB0C550090B5F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E81107C529BB0C550090B5F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "INFITS-App/INFITS-AppDebug.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"INFITS-App/Preview Content\"";
+				DEVELOPMENT_TEAM = H8SDH9W9Q7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "INFITS-App/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Myself.INFITS-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E81107C629BB0C550090B5F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"INFITS-App/Preview Content\"";
+				DEVELOPMENT_TEAM = H8SDH9W9Q7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "INFITS-App/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Myself.INFITS-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E81107B129BB0C540090B5F3 /* Build configuration list for PBXProject "INFITS-App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E81107C229BB0C550090B5F3 /* Debug */,
+				E81107C329BB0C550090B5F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E81107C429BB0C550090B5F3 /* Build configuration list for PBXNativeTarget "INFITS-App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E81107C529BB0C550090B5F3 /* Debug */,
+				E81107C629BB0C550090B5F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E81107E929BB14060090B5F3 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		E81107EE29BB154B0090B5F3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		E841AD4029DEC9E000A9D69A /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.0;
+			};
+		};
+		F02ADEDA29C9AB2A008E16CE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E81107EA29BB14060090B5F3 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E81107E929BB14060090B5F3 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		E81107EC29BB14060090B5F3 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E81107E929BB14060090B5F3 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		E81107EF29BB154B0090B5F3 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E81107EE29BB154B0090B5F3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E841AD4129DEC9E000A9D69A /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E841AD4029DEC9E000A9D69A /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+		F02ADEDB29C9AB2A008E16CE /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F02ADEDA29C9AB2A008E16CE /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E81107AE29BB0C540090B5F3 /* Project object */;
+}
