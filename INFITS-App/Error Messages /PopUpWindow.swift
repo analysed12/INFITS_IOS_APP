@@ -47,7 +47,12 @@ struct PopUpWindow: View {
                         .foregroundColor(Color.white)
                 }
                 .frame(maxWidth: UIScreen.main.bounds.width - 50)
-                .background(Color(red: 255 / 255, green: 119 / 255, blue: 119 / 255).opacity(1))
+                .background( LinearGradient(gradient: Gradient(colors: [
+                    Color(red: 255 / 255, green: 153 / 255, blue: 55 / 255),
+                    Color(red: 236 / 255, green: 255 / 255, blue: 120 / 255)
+                ]),
+                               startPoint: .topLeading,
+                               endPoint: .bottomTrailing))
                 .cornerRadius(15)
             } else {
 
@@ -61,8 +66,13 @@ struct PopUpWindow: View {
                     Text("Done")
                         .font(Font.custom("NATS 400", size: 20))
                         .frame(width: 132, height: 45, alignment: .center)
-                        .foregroundColor(Color(red: 246 / 255, green: 181 / 255, blue: 102 / 255).opacity(1))
-                        .background(.white)
+                        .foregroundColor(Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255).opacity(1))
+                        .background(( LinearGradient(gradient: Gradient(colors: [
+                            Color(red: 255 / 255, green: 153 / 255, blue: 55 / 255),
+                            Color(red: 236 / 255, green: 255 / 255, blue: 120 / 255)
+                        ]),
+                                       startPoint: .topLeading,
+                                       endPoint: .bottomTrailing)))
 
                         .clipShape(Rectangle())
                         .cornerRadius(10)

@@ -19,7 +19,7 @@ struct LoginView: View {
     @State private var visible:Bool = false
     @State private var color = Color.white.opacity(0.7)
     
-//    @Binding var show : Bool
+    //    @Binding var show : Bool
     @State var alert = false
     @State var error = ""
     
@@ -34,7 +34,7 @@ struct LoginView: View {
     @State var profileUrl: String = ""
     @State var isLoggedIn: Bool = false
     @State var isLoading:Bool = false
-
+    @State var errorMessage: String = ""
     
     var body: some View {
         
@@ -62,7 +62,7 @@ struct LoginView: View {
                             if self.visible{
                                 
                                 TextFieldCustom(placeHolder: "Enter Password", text: self.$password)
- 
+                                
                             } else {
                                 
                                 ZStack {
@@ -83,7 +83,7 @@ struct LoginView: View {
                                        maxHeight: 55,
                                        alignment: .topLeading)
                             }
- 
+                            
                         }// textfeildZstack
                     } //end
                     
@@ -139,25 +139,6 @@ struct LoginView: View {
                 }
                 
                 ZStack {
-                    //Socile Media Button
-//                    HStack {
-//                        //Gogle SignIn
-//                        HStack{
-//                            if log_Status {
-//                                //home screen
-////                                path.append(NavigationType.testView)
-//
-//                            } else {
-//                                SocialMediaLoginView( path: .constant(NavigationPath()))
-//                            }
-//                        }
-//
-//                        //Facebook SignIn
-//                        HStack{
-//
-//                        }
-//                    }
-                    
                     HStack(spacing: 5) {
                         
                         Button(action: {
@@ -221,7 +202,7 @@ struct LoginView: View {
     func verify() {
         
         if self.userName != "" && self.password != "" {
-                postdata()
+            postdata()
         } else {
             self.error = "Please Enter User Name or Password"
             self.alert.toggle()
@@ -242,7 +223,7 @@ struct LoginView: View {
                 print(error.localizedDescription)
             }
         }
-
+        
     }
     
     //GoogleSign In
@@ -253,42 +234,36 @@ struct LoginView: View {
         
         //GoogleSIgnin Configuration Object
         let configure = GIDConfiguration(clientID: clientId)
-         
-//        isLoading =  true
+        
+        //        isLoading =  true
         GIDSignIn.sharedInstance.configuration = configure
         
         //signin method goes here
-        GIDSignIn.sharedInstance.signIn(withPresenting: Application_utility.rootViewControler){ [self] user, error in
+        GIDSignIn.sharedInstance.signIn(withPresenting: Application_utility.rootViewControler) { [self] user, error in
             if let error = error{
                 isLoading = false
                 print(error.localizedDescription)
                 return
             }
             else{
-                GIDSignIn.sharedInstance.restorePreviousSignIn(){ user,error in
-                    print("New User")
-                    print(user)
-                }
                 
-                GIDSignIn.sharedInstance.hasPreviousSignIn()
-                
-               
                 if(GIDSignIn.sharedInstance.currentUser != nil) {
                     let user = GIDSignIn.sharedInstance.currentUser
-
                     guard let user = user else { return }
                     let userId = user.userID
                     let fullName = user.profile?.name
                     let givenName = user.profile?.givenName
                     let familyName = user.profile?.familyName
                     let email = user.profile?.email
-
-
+                    let accessToken  = user.accessToken
+                    print("Toekn Number is :- \(accessToken)")
+                    
+                    
                     let registerModel = RegisterModel(email: email ?? "", password: "", userID: userId ?? "", name: fullName ?? "", phone: "", gender: "", age: "", height: "", weight: "", verification: "", dietitianuserID: "", location: "")
-
+                    
                     APIManager.shareInstance.getSignupData(register: registerModel) { (isSuccess) in
                         print(registerModel)
-
+                        
                         if isSuccess{
                             self.error = "Data is successfullySaved"
                             path.append(NavigationType.homeScreen)
@@ -296,7 +271,6 @@ struct LoginView: View {
                             self.error = "Data Not Saved"
                         }
                     }
-                     
                     
                     var profilePicUrl = user.profile!.imageURL(withDimension: 100)!.absoluteString
                     googleUserName = givenName ?? ""
@@ -310,8 +284,6 @@ struct LoginView: View {
                 }
             }
              
-
-            
             guard let user = user?.user, let idToken  = user.idToken else {
                 isLoading = false
                 return
@@ -344,9 +316,7 @@ struct LoginView: View {
         
     }
     
-    
-}
-
+} 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView(path: .constant(NavigationPath()))

@@ -150,7 +150,7 @@ struct SignupView: View {
                     
                     Button(action: {
                         path.removeLast()
-                    }) {
+                     }) {
                         HStack {
                             Text("Already a member? Log In")
                                 .foregroundColor(Color.white)

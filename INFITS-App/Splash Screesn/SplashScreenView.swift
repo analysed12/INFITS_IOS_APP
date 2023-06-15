@@ -34,8 +34,24 @@ struct SplashScreenView: View {
                             CheckMailView(path: $path)
                         case .homeScreen :
                             HomeScreen(path: $path)
+                        case .ConfirmFoodSecction:
+                            ConfirmFoodSecction(path: $path)
                         case .stepTracker :
                             StepTracker(path: $path)
+                        case .HeartRateView:
+                            HeartRateView(path: $path)
+                        case .WeightTracker:
+                            WeightTracker(path:$path)
+                        case .ProfileSettings:
+                            ProfileSettings(path:$path)
+                        case .LiveSession :
+                            LiveSession(path: $path)
+                        case .sleepTracker :
+                            SleepTrackerView(path: $path)
+                        case .CalorieTracker :
+                            CalorieTrackerView(path: $path)
+                        case .waterTracker :
+                            WaterTrackerView(path: $path)
                         }
                     }
             } else {
@@ -80,6 +96,22 @@ struct SplashScreenView: View {
                         HomeScreen(path: $path)
                     case .stepTracker :
                         StepTracker(path: $path)
+                    case .ConfirmFoodSecction :
+                        ConfirmFoodSecction(path: $path)
+                    case .HeartRateView :
+                        HeartRateView(path: $path)
+                    case .WeightTracker :
+                        WeightTracker(path:$path)
+                    case .ProfileSettings :
+                        ProfileSettings(path: $path)
+                    case .LiveSession :
+                        LiveSession(path: $path)
+                    case .sleepTracker :
+                        SleepTrackerView(path: $path)
+                    case .CalorieTracker :
+                        CalorieTrackerView(path: $path)
+                    case .waterTracker :
+                        WaterTrackerView(path: $path)
                     }
                 }
             }

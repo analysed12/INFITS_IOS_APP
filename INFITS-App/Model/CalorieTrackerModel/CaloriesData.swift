@@ -8,7 +8,6 @@
  
 import Foundation
 
-
 struct CaloriesData:Identifiable {
     var id = UUID()
     var activitieImage:String

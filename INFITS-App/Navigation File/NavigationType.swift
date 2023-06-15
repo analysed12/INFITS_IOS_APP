@@ -14,7 +14,13 @@ enum NavigationType: String, Hashable{
     case checkEmail = "Check Email"
     case homeScreen = "Home Screen"
     case stepTracker = "Step Tracker"
-    
-
+    case ConfirmFoodSecction = "Add BreakFast"
+    case HeartRateView = "Heart Rate View"
+    case WeightTracker = "Weight Tracker"
+    case ProfileSettings = "Profile Settings"
+    case LiveSession = "Live Session"
+    case sleepTracker = "Sleep Tracker"
+    case waterTracker = "Water Tracker"
+    case CalorieTracker = "Calorie Tracker"
     
 }
